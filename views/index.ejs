@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+</head>
+<body>
+    <div class="container mt-5" style="width: 400px;">
+        <%= typeof msg != 'undefined' ? msg : ''; %>
+        <div class="form-group">
+            <form action="/uploaded" method="POST" enctype="multipart/form-data">
+                <input name="fayl" type="file" class="form-control p-1 bg-transparent border border-secondary">
+                <br>
+                <div class="float-right mt-1">
+                    <button type="submit" class="btn btn-primary btn-sm">Send</button>
+                </div>
+            </form>   
+        </div>
+            <br>
+            <hr>
+            <img src="<%= typeof fayl != 'undefined' ? fayl : '' %>" class="img-fluid img-thumbnail" alt="">
+    </div>
+</body>
+</html>
